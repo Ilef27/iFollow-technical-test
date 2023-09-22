@@ -56,17 +56,34 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 * Localization and Navigation:
 
-- running the turtlebot3_world and SLAM simulations:
-NB: make sure you have gmapping, amcl, map_saver and move_base installed before
-```
-$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
-```
-- running teleop_key command in a separate terminal and navigating to map the robot's environment
+  running the turtlebot3_world and SLAM simulations:
+  NB: make sure you have gmapping, amcl, map_saver and move_base installed before
+  ```
+  $ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+  ```
+   running teleop_key command in a separate terminal and navigating to map the robot's environment
+  
+   saving the mapping done through the navigation of the robot:
+  ```
+  $ rosrun map_server map_saver -f ~/map
+  ```
 
-- saving the mapping done through the navigation of the robot:
-```
-$ rosrun map_server map_saver -f ~/map
-```
+  Result:
+  
+![map](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/e652c767-3232-437a-8c5a-467bfbdf0c7a)
 
+
+  launching turtlebot3_world once again, and launching rviz using the saved map: 
+  NB: Install dwa-local-planner if you don't have it 
+  ```
+  $ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+  ```
+  Result after fixing 2d pose estimate (on the left) then after narrowing down the position estimation represented by the small green arrows (on the right) using      the teleop command: 
+  
+  ![green](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/344679a8-411a-4409-9a43-49e1a8f1a8a0)
+
+  Finally, set the desired 2d av goal using the 2d pose estimate in RVIZ:
+
+  ![2dnav](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/6a4a7360-eb1c-40a8-ad10-5d0984bc544a)
 
 
