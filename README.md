@@ -117,4 +117,38 @@ if the switcher value is out of the range of considered values:
 
 if the switcher value does not correspond to the cmd topic nothing happens
 
+## 3. Remote teleoperation / Téléopération à distance
+
+* Install the MQTT and keyboard input libraries:
+```
+$ pip install paho-mqtt
+$ pip install pynput
+```
+
+* run the Teleop_MQTT.py by accessing to its directory and running:
+```
+ $  python3 Teleop_MQTT.py
+```
+
+ * change the velocity using these keys:
+  {UP, DOWN} : to increase/decrease linear velocity
+  {LEFT, RIGHT} : to increase/decrease angular velocity
+  {ESC} : to put back both velocities to 0.0
+  
+the velocity is published every time it is changed using keypresses to "velocity_topic"
+
+![teleop](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/1815cefa-8967-4766-85a4-74b1dfd12069)
+
+rosrun the MQTT_listener.py: 
+```
+$ rosrun test MQTT_listener.py
+```
+
+![mqtt listener](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/b87e9ca3-7b08-4662-b560-7fa3e6a8b46b)
+
+
+
+MQTT_listener publishes to /cmd_web:
+
+![cmd_web_echo](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/4b0fbcc9-b71c-4b84-8187-49034b981f05)
 
