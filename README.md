@@ -55,6 +55,18 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 
 * Localization and Navigation:
-  
+
+- running the turtlebot3_world and SLAM simulations:
+NB: make sure you have gmapping, amcl, map_saver and move_base installed before
+```
+$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+```
+- running teleop_key command in a separate terminal and navigating to map the robot's environment
+
+- saving the mapping done through the navigation of the robot:
+```
+$ rosrun map_server map_saver -f ~/map
+```
+
 
 
