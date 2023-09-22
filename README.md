@@ -86,4 +86,35 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
   ![2dnav](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/6a4a7360-eb1c-40a8-ad10-5d0984bc544a)
 
+## 2. Control multiplexer / Multiplexeur de commande:
+
+* First, make Multiplex.cpp executable by adding these two lines to the CmakeLists.txt:
+
+add_executable(Multiplex.cpp /home/ilef/catkin_ws/src/test/src/Mutiplex.cpp)
+
+target_link_libraries(Multiplex.cpp ${catkin_LIBRARIES})
+
+* run the node Multiplex.cpp
+* publish the switch value to the switch topic from terminal:
+```
+$  rostopic pub -1 /switch std_msgs/Int8 '1'
+```
+
+publish the velocity command to the according topic from terminal: 
+```
+$ rostopic pub -1 /cmd_local geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
+```
+result: 
+
+![test resut](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/b9fde005-da8a-4a29-b2b1-965cba868857)
+
+
+if the switcher value is out of the range of considered values: 
+
+![test 2](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/72c02a89-a36b-4a2e-91c9-c255ca823764)
+
+
+
+if the switcher value does not correspond to the cmd topic nothing happens
+
 
