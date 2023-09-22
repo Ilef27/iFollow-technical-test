@@ -167,8 +167,20 @@ rosrun AR_decode.py:
 
 ![AR_decode execution](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/349cb3b8-62ed-4d66-af1e-4fa57741722f)
 
+* AR tag recognition:
+
+  ![savedARtag2](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/3c6a327f-4a90-4447-9a5d-11945225952b)
 
 result on rviz:
 
 
 ![navgoal_from_tag](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/4ac4d13b-2c6f-4119-92f1-37f4820eb763)
+
+## 6. Using an image capture / Utilisation d’une capture d’image :
+
+* run Screenshot_recognition.py
+* captured image:
+
+![AR_Tag](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/3fcff527-73be-4d97-b4a5-deb1ea6aea1b)
+
+the rest processing is similar to #4
