@@ -1,12 +1,12 @@
 # iFollow-technical-test
 ROS framework applications Test:
 
-## Table of contents: 
-*  Setting up the test environment / Mise en place de l’environnement de test
-*  Control multiplexer / Multiplexeur de commande
-*  Remote teleoperation / Téléopération à distance
-*  Sending of Goal determined by a visual tag / Envoi de Goal déterminé par un tag visuel
-*  Using an image capture / Utilisation d’une capture d’image 
+## Table of contents & duration it took to be completed
+*  Setting up the test environment / Mise en place de l’environnement de test (4hours)
+*  Control multiplexer / Multiplexeur de commande (2hours)
+*  Remote teleoperation / Téléopération à distance (3hours)
+*  Sending of Goal determined by a visual tag / Envoi de Goal déterminé par un tag visuel (4 hours)
+*  Using an image capture / Utilisation d’une capture d’image (0.5 hours)
 
 ## 1. Setting up the test environment / Mise en place de l’environnement de test: 
 * Creating the package under the workspace catkin_ws and build the workspace
