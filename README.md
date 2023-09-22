@@ -6,7 +6,7 @@ ROS framework applications Test:
 *  Control multiplexer / Multiplexeur de commande
 *  Remote teleoperation / Téléopération à distance
 *  Sending of Goal determined by a visual tag / Envoi de Goal déterminé par un tag visuel
-* Using an image capture / Utilisation d’une capture d’image 
+*  Using an image capture / Utilisation d’une capture d’image 
 
 ## 1. Setting up the test environment / Mise en place de l’environnement de test: 
 * Creating the package under the workspace catkin_ws and build the workspace
@@ -152,3 +152,23 @@ MQTT_listener publishes to /cmd_web:
 
 ![cmd_web_echo](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/4b0fbcc9-b71c-4b84-8187-49034b981f05)
 
+
+## 4. Sending of Goal determined by a visual tag / Envoi de Goal déterminé par un tag visuel:
+
+* Install opencv and apriltag
+* change the "path" variable to the path containing the apriltag
+* launch turtlebot3 on gazebo and rviz using commands:
+```
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+```
+* Use teleop_key comand to narrow down the green arrows
+rosrun AR_decode.py:
+
+![AR_decode execution](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/349cb3b8-62ed-4d66-af1e-4fa57741722f)
+
+
+result on rviz:
+
+
+![navgoal_from_tag](https://github.com/Ilef27/iFollow-technical-test/assets/74418956/4ac4d13b-2c6f-4119-92f1-37f4820eb763)
